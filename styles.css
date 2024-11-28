@@ -11,25 +11,32 @@ body {
     transition: background-color 1s ease; /* Smidig övergång för bakgrundsfärg */
 }
 
+/* Responsiv design för container */
 #container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center; /* Centrera innehållet */
+    align-items: center;
+    flex-wrap: wrap; /* Gör så att bilderna kan gå ner på nästa rad om skärmen är liten */
     width: 100%;
     max-width: 900px;
     margin-bottom: 20px;
+    gap: 20px; /* Lägg till mellanrum mellan bilderna */
 }
 
+/* Sol och måne container */
 #sun-container, #moon-container {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    max-width: 100%; /* Gör så att containerstorleken inte överskrider skärmen */
 }
 
 /* Sol och måne bilder */
 #sun, #moon {
-    width: 250px; /* Justera standardstorleken */
+    width: 100%; /* Gör bilderna responsiva */
+    max-width: 250px; /* Begränsa maximal storlek */
     height: auto;
     cursor: pointer;
     transition: transform 0.3s ease; /* Mjuk övergång vid ändring av storlek */
@@ -76,19 +83,47 @@ button {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 90%; /* Gör knappen större på små skärmar */
+    max-width: 300px; /* Begränsa maximal bredd på knappen */
 }
 
 button:hover {
     background-color: #2980b9;
 }
 
-/* Lägger till smidig återställning av bildstorlek när ny knapp klickas */
-#sun, #moon {
-    transition: transform 0.3s ease-in-out; /* Smidig övergång för storleksändring */
-}
-
 /* För att ge ett litet extra utrymme när bilderna är bredvid varandra */
 #container {
     justify-content: center;
     margin-bottom: 30px;
+}
+
+/* Media query för små skärmar (som iPhone) */
+@media (max-width: 768px) {
+    #sun, #moon {
+        max-width: 180px; /* Minska bildstorleken för små skärmar */
+    }
+
+    .text-container {
+        font-size: 18px; /* Minska textstorlek på små skärmar */
+    }
+
+    button {
+        width: 90%; /* Gör knappen större på små skärmar */
+        font-size: 18px; /* Öka textstorlek på knappen för att göra den lättare att trycka på */
+    }
+
+    #container {
+        flex-direction: column; /* Ställ bilderna på högkant */
+    }
+}
+
+/* Media query för liggande läge */
+@media (orientation: landscape) {
+    #container {
+        flex-direction: row; /* Placera bilderna sida vid sida i liggande läge */
+    }
+
+    #sun, #moon {
+        max-width: 200px; /* Begränsa bildstorleken i liggande läge */
+    }
 }
