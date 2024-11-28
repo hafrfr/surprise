@@ -8,19 +8,21 @@ body {
     margin: 0;
     background-color: #f0f0f0;
     text-align: center;
-    transition: background-color 1s ease; /* Smidig övergång för bakgrundsfärg */
+    transition: background-color 1s ease;
 }
 
 /* Responsiv design för container */
 #container {
     display: flex;
-    justify-content: center; /* Centrera innehållet */
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Gör så att bilderna kan gå ner på nästa rad om skärmen är liten */
+    flex-wrap: wrap;
     width: 100%;
     max-width: 900px;
     margin-bottom: 20px;
-    gap: 20px; /* Lägg till mellanrum mellan bilderna */
+    gap: 20px;
+    /* Justera för att fylla skärmen mer effektivt */
+    flex-grow: 1;
 }
 
 /* Sol och måne container */
@@ -30,21 +32,21 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    max-width: 100%; /* Gör så att containerstorleken inte överskrider skärmen */
+    max-width: 100%;
 }
 
 /* Sol och måne bilder */
 #sun, #moon {
-    width: 100%; /* Gör bilderna responsiva */
-    max-width: 250px; /* Begränsa maximal storlek */
+    width: 100%;
+    max-width: 250px;
     height: auto;
     cursor: pointer;
-    transition: transform 0.3s ease; /* Mjuk övergång vid ändring av storlek */
+    transition: transform 0.3s ease;
 }
 
 /* Skala upp bild vid klick */
 #sun.clicked, #moon.clicked {
-    transform: scale(1.5); /* Förstorar bilden vid klick */
+    transform: scale(1.5);
 }
 
 /* Textcontainer med animation */
@@ -66,64 +68,36 @@ body {
 
 /* Bakgrundsfärg för sol och måne */
 body.sun-selected {
-    background-color: #edbe6f; /* Solens guldgula färg */
+    background-color: #edbe6f;
 }
 
 body.moon-selected {
-    background-color: #00546c; /* Månens mörka färg */
-}
-
-/* Nytt val knapp */
-button {
-    padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 90%; /* Gör knappen större på små skärmar */
-    max-width: 300px; /* Begränsa maximal bredd på knappen */
-}
-
-button:hover {
-    background-color: #2980b9;
-}
-
-/* För att ge ett litet extra utrymme när bilderna är bredvid varandra */
-#container {
-    justify-content: center;
-    margin-bottom: 30px;
+    background-color: #00546c;
 }
 
 /* Media query för små skärmar (som iPhone) */
 @media (max-width: 768px) {
     #sun, #moon {
-        max-width: 180px; /* Minska bildstorleken för små skärmar */
+        max-width: 180px;
     }
 
     .text-container {
-        font-size: 18px; /* Minska textstorlek på små skärmar */
-    }
-
-    button {
-        width: 90%; /* Gör knappen större på små skärmar */
-        font-size: 18px; /* Öka textstorlek på knappen för att göra den lättare att trycka på */
+        font-size: 18px;
     }
 
     #container {
-        flex-direction: column; /* Ställ bilderna på högkant */
+        flex-direction: column;
+        gap: 10px;
     }
 }
 
 /* Media query för liggande läge */
 @media (orientation: landscape) {
     #container {
-        flex-direction: row; /* Placera bilderna sida vid sida i liggande läge */
+        flex-direction: row;
     }
 
     #sun, #moon {
-        max-width: 200px; /* Begränsa bildstorleken i liggande läge */
+        max-width: 200px;
     }
 }
