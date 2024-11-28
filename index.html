@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Ljudet spelar automatiskt här -->
     <audio id="tompaAudio" src="tompa.mp3" preload="auto" autoplay></audio>
+
     <div id="container">
         <div id="sun-container">
             <img id="sun" src="sun.jpeg" alt="Solen" />
@@ -22,6 +24,12 @@
     </div>
 
     <div id="feedback"></div>
+
+    <!-- Lägger till kontroll för ljud -->
+    <audio controls>
+        <source src="tompa.mp3" type="audio/mp3">
+        Din webbläsare stöder inte ljuduppspelning.
+    </audio>
 
     <script src="script.js"></script>
 </body>
