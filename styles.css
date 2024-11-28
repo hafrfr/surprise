@@ -9,6 +9,7 @@ body {
     background-color: #f0f0f0;
     text-align: center;
     transition: background-color 1s ease; /* Smidig övergång för bakgrundsfärg */
+    flex-direction: column; /* Lägg till denna rad för att stapla innehållet vertikalt */
 }
 
 /* Responsiv design för container */
@@ -21,6 +22,8 @@ body {
     max-width: 900px;
     margin-bottom: 20px;
     gap: 20px; /* Lägg till mellanrum mellan bilderna */
+    flex-direction: column; /* Gör så att texten kommer ovanför bilderna */
+    order: 2; /* Förändra ordningen så att bilderna kommer efter texten */
 }
 
 /* Sol och måne container */
@@ -57,6 +60,7 @@ body {
     opacity: 0;
     transform: translateY(-20px);
     transition: opacity 1s, transform 1s;
+    order: 1; /* Gör så att texten kommer före bilderna */
 }
 
 .text-container.show-text {
@@ -72,8 +76,6 @@ body.sun-selected {
 body.moon-selected {
     background-color: #00546c; /* Månens mörka färg */
 }
-
-/* Ta bort "nytt val" knappens CSS */
 
 /* För att ge ett litet extra utrymme när bilderna är bredvid varandra */
 #container {
