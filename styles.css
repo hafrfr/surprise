@@ -52,6 +52,11 @@ body {
     align-items: center;
     cursor: pointer;
     max-width: 100%;
+    transition: transform 0.3s ease;
+}
+
+#sun-container:hover, #moon-container:hover {
+    transform: scale(1.05);  /* Smidig zoom-effekt på hela container när musen är över */
 }
 
 /* Sol och måne bilder */
@@ -60,11 +65,12 @@ body {
     max-width: 250px;
     height: auto;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 #sun.clicked, #moon.clicked {
     transform: scale(1.5);
+    opacity: 0.8;  /* Lägger till en liten genomskinlighetseffekt när de klickas */
 }
 
 /* Bakgrundsfärg för val */
@@ -78,20 +84,21 @@ body.moon-selected {
 
 /* Nytt val knapp */
 button {
-    padding: 10px 20px;
+    padding: 12px 24px; /* Öka knappens storlek för att göra det lättare att klicka */
     margin-top: 20px;
     background-color: #3498db;
     color: white;
     border: none;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s ease;
     width: 90%;
     max-width: 300px;
 }
 
 button:hover {
     background-color: #2980b9;
+    transform: scale(1.05); /* Lägger till en zoom-effekt vid hover */
 }
 
 /* Bekräftelseknapp */
@@ -103,35 +110,19 @@ button:hover {
 }
 
 #confirm-button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     background-color: #34a853;
     color: white;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 #confirm-button:hover {
     background-color: #2a8e45;
-}
-
-/* Resultatrutan */
-#result-box {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #f0f0f0;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-#result-text {
-    font-size: 18px;
-    color: #333;
-    font-weight: bold;
+    transform: scale(1.05); /* Lägger till en zoom-effekt vid hover */
 }
 
 /* Media query för små skärmar */
@@ -142,6 +133,7 @@ button:hover {
 
     .text-container {
         font-size: 18px;
+        padding: 0 15px;  /* Lägger till lite padding för att undvika att texten går för nära kanten */
     }
 
     button {
@@ -151,6 +143,10 @@ button:hover {
 
     #container {
         flex-direction: column;
+    }
+
+    #sun-container, #moon-container {
+        margin-bottom: 10px;  /* Lite mer utrymme mellan bilderna på mindre skärmar */
     }
 }
 
@@ -164,3 +160,4 @@ button:hover {
         max-width: 200px;
     }
 }
+
