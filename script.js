@@ -21,6 +21,9 @@ document.getElementById('sun').addEventListener('click', function() {
     // Spara användarens val
     userChoice = "solen";
     updateFeedback();
+    
+    // Visa bekräftelseknappen när ett val är gjort
+    document.getElementById('confirmation-box').classList.remove('hidden');
 });
 
 document.getElementById('moon').addEventListener('click', function() {
@@ -43,6 +46,9 @@ document.getElementById('moon').addEventListener('click', function() {
     // Spara användarens val
     userChoice = "månen";
     updateFeedback();
+    
+    // Visa bekräftelseknappen när ett val är gjort
+    document.getElementById('confirmation-box').classList.remove('hidden');
 });
 
 // Funktion för att spela upp ljudet baserat på val
@@ -81,6 +87,9 @@ document.getElementById('new-choice').addEventListener('click', function() {
     // Återställ användarens val
     userChoice = "";
     updateFeedback();
+
+    // Dölj bekräftelseknappen igen
+    document.getElementById('confirmation-box').classList.add('hidden');
 });
 
 // Funktion för att uppdatera feedback baserat på användarens val (valfritt)
@@ -103,5 +112,6 @@ document.getElementById('confirm-choice').addEventListener('click', function() {
         alert("Du måste välja solen eller månen innan du kan bekräfta ditt val!");
     }
 });
+
 
 
