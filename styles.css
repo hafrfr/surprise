@@ -163,6 +163,21 @@ button:hover {
     }
 }
 
+/* Döljer bekräftelseknappen på små skärmar (mobil) */
+@media (max-width: 768px) {
+    #confirmation-box {
+        display: none;
+    }
+}
+
+/* Bekräftelseknappen är synlig på stora skärmar (dator) */
+@media (min-width: 769px) {
+    #confirmation-box {
+        display: block;
+    }
+}
+
+
 /* Media query för liggande läge (räknare visas bara på stora skärmar) */
 @media (orientation: landscape) {
     #container {
