@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Ljudet läggs till men spelas först vid bekräftelse -->
+    <!-- Lägg till ljudfilen för att användas vid bekräftelse -->
     <audio id="tompaAudio" src="tompa.mp3" preload="auto"></audio>
 
     <div id="container">
@@ -25,9 +25,9 @@
 
     <div id="feedback"></div>
 
-    <!-- Lägg till denna sektion -->
-    <div id="confirmation-box" class="hidden">
-        <button id="confirm-button">Bekräfta ditt val</button>
+    <!-- Bekräfta ditt val-knappen -->
+    <div id="confirmation-box">
+        <button id="confirm-choice">Bekräfta ditt val</button>
     </div>
 
     <div id="result-box" class="hidden">
