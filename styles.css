@@ -102,28 +102,6 @@ button:hover {
     margin-top: 20px;
 }
 
-/* Gömd bekräftelsebox och räknare */
-#confirmation-box.hidden, #counter-box.hidden {
-    display: none;
-}
-
-/* Counter box för sol och måne */
-#counter-box {
-    margin-top: 20px;
-    font-size: 18px;
-    padding: 10px;
-    background-color: #f1f1f1;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Counter text för sol och måne */
-#counter-box span {
-    margin: 0 15px;
-    font-weight: bold;
-}
-
-/* Bekräftelseknapp */
 #confirm-button {
     padding: 10px 20px;
     background-color: #34a853;
@@ -139,7 +117,7 @@ button:hover {
     background-color: #2a8e45;
 }
 
-/* Media query för små skärmar (döljer räknare) */
+/* Media query för små skärmar */
 @media (max-width: 768px) {
     #sun, #moon {
         max-width: 180px;
@@ -157,28 +135,9 @@ button:hover {
     #container {
         flex-direction: column;
     }
-
-    #counter-box {
-        display: none;  /* Döljer räknaren på små skärmar */
-    }
 }
 
-/* Döljer bekräftelseknappen på små skärmar (mobil) */
-@media (max-width: 768px) {
-    #confirmation-box {
-        display: none;
-    }
-}
-
-/* Bekräftelseknappen är synlig på stora skärmar (dator) */
-@media (min-width: 769px) {
-    #confirmation-box {
-        display: block;
-    }
-}
-
-
-/* Media query för liggande läge (räknare visas bara på stora skärmar) */
+/* Media query för liggande läge */
 @media (orientation: landscape) {
     #container {
         flex-direction: row;
@@ -186,13 +145,6 @@ button:hover {
 
     #sun, #moon {
         max-width: 200px;
-    }
-}
-
-/* Media query för stora skärmar (räknare syns på datorer) */
-@media (min-width: 769px) {
-    #counter-box {
-        display: block; /* Visar räknaren på skärmar större än 768px */
     }
 }
 
