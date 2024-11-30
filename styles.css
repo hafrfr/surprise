@@ -117,23 +117,6 @@ button:hover {
     background-color: #2a8e45;
 }
 
-/* Resultatrutan */
-#result-box {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #f0f0f0;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-#result-text {
-    font-size: 18px;
-    color: #333;
-    font-weight: bold;
-}
-
 /* Media query för små skärmar */
 @media (max-width: 768px) {
     #sun, #moon {
