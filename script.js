@@ -89,3 +89,19 @@ function updateFeedback() {
     // beroende på deras val, om du till exempel vill visa något annat.
 }
 
+// Bekräfta-val-knapp
+document.getElementById('confirm-choice').addEventListener('click', function() {
+    if (userChoice) {
+        // Spela upp tompa.mp3
+        playSound('tompa.mp3');
+        
+        // Visa bekräftande text
+        const textBox = document.getElementById('text-box');
+        textBox.innerHTML = `Du har bekräftat ditt val av ${userChoice}. Ett visdomsbeslut har tagits!`;
+        textBox.classList.add('show-text');
+    } else {
+        alert("Du måste välja solen eller månen innan du kan bekräfta ditt val!");
+    }
+});
+
+
