@@ -2,14 +2,14 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column; /* Lägg till denna rad för att stapla elementen vertikalt */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
     text-align: center;
-    transition: background-color 1s ease; /* Smidig övergång för bakgrundsfärg */
+    transition: background-color 1s ease;
 }
 
 /* Textcontainer med animation */
@@ -22,7 +22,7 @@ body {
     opacity: 0;
     transform: translateY(-20px);
     transition: opacity 1s, transform 1s;
-    z-index: 10; /* Gör texten ovanför bilderna */
+    z-index: 10;
 }
 
 .text-container.show-text {
@@ -33,15 +33,15 @@ body {
 /* Responsiv design för container */
 #container {
     display: flex;
-    justify-content: center; /* Centrera innehållet */
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Gör så att bilderna kan gå ner på nästa rad om skärmen är liten */
+    flex-wrap: wrap;
     width: 100%;
     max-width: 900px;
     margin-bottom: 20px;
-    gap: 20px; /* Lägg till mellanrum mellan bilderna */
-    flex-direction: row; /* Gör så att bilderna ligger bredvid varandra */
-    margin-top: 30px; /* Lägger till utrymme över bilderna för texten */
+    gap: 20px;
+    flex-direction: row;
+    margin-top: 30px;
 }
 
 /* Sol och måne container */
@@ -51,30 +51,29 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    max-width: 100%; /* Gör så att containerstorleken inte överskrider skärmen */
+    max-width: 100%;
 }
 
 /* Sol och måne bilder */
 #sun, #moon {
-    width: 100%; /* Gör bilderna responsiva */
-    max-width: 250px; /* Begränsa maximal storlek */
+    width: 100%;
+    max-width: 250px;
     height: auto;
     cursor: pointer;
-    transition: transform 0.3s ease; /* Mjuk övergång vid ändring av storlek */
+    transition: transform 0.3s ease;
 }
 
-/* Skala upp bild vid klick */
 #sun.clicked, #moon.clicked {
-    transform: scale(1.5); /* Förstorar bilden vid klick */
+    transform: scale(1.5);
 }
 
-/* Bakgrundsfärg för sol och måne */
+/* Bakgrundsfärg för val */
 body.sun-selected {
-    background-color: #edbe6f; /* Solens guldgula färg */
+    background-color: #edbe6f;
 }
 
 body.moon-selected {
-    background-color: #00546c; /* Månens mörka färg */
+    background-color: #00546c;
 }
 
 /* Nytt val knapp */
@@ -87,48 +86,82 @@ button {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
-    width: 90%; /* Gör knappen större på små skärmar */
-    max-width: 300px; /* Begränsa maximal bredd på knappen */
+    width: 90%;
+    max-width: 300px;
 }
 
 button:hover {
     background-color: #2980b9;
 }
 
-/* För att ge ett litet extra utrymme när bilderna är bredvid varandra */
-#container {
+/* Bekräftelseknapp */
+#confirmation-box {
+    display: flex;
     justify-content: center;
-    margin-bottom: 30px;
+    align-items: center;
+    margin-top: 20px;
 }
 
-/* Media query för små skärmar (som iPhone) */
+#confirm-button {
+    padding: 10px 20px;
+    background-color: #34a853;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#confirm-button:hover {
+    background-color: #2a8e45;
+}
+
+/* Resultatrutan */
+#result-box {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#result-text {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Media query för små skärmar */
 @media (max-width: 768px) {
     #sun, #moon {
-        max-width: 180px; /* Minska bildstorleken för små skärmar */
+        max-width: 180px;
     }
 
     .text-container {
-        font-size: 18px; /* Minska textstorlek på små skärmar */
+        font-size: 18px;
     }
 
     button {
-        width: 90%; /* Gör knappen större på små skärmar */
-        font-size: 18px; /* Öka textstorlek på knappen för att göra den lättare att trycka på */
+        width: 90%;
+        font-size: 18px;
     }
 
     #container {
-        flex-direction: column; /* Ställ bilderna på högkant */
+        flex-direction: column;
     }
 }
 
 /* Media query för liggande läge */
 @media (orientation: landscape) {
     #container {
-        flex-direction: row; /* Placera bilderna sida vid sida i liggande läge */
+        flex-direction: row;
     }
 
     #sun, #moon {
-        max-width: 200px; /* Begränsa bildstorleken i liggande läge */
+        max-width: 200px;
     }
 }
 
