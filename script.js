@@ -25,6 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Visa bekräftelseknappen när ett val är gjort
         document.getElementById('confirmation-box').classList.remove('hidden');
+        
+        // Uppdatera räknaren
+        updateCounter();
     });
 
     document.getElementById('moon').addEventListener('click', function() {
@@ -50,6 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Visa bekräftelseknappen när ett val är gjort
         document.getElementById('confirmation-box').classList.remove('hidden');
+        
+        // Uppdatera räknaren
+        updateCounter();
     });
 
     // Funktion för att spela upp ljudet baserat på val
@@ -89,6 +95,26 @@ document.addEventListener('DOMContentLoaded', function() {
             alert("Du måste välja solen eller månen innan du kan bekräfta ditt val!");
         }
     });
+
+    // Funktion för att uppdatera räknaren (visas på datorer)
+    function updateCounter() {
+        // Om vi har räknaren synlig, uppdatera den baserat på valen
+        const counterBox = document.getElementById('counter-box');
+        let sunCount = parseInt(localStorage.getItem('sunCount') || 0);
+        let moonCount = parseInt(localStorage.getItem('moonCount') || 0);
+
+        // Uppdatera antalet beroende på användarens val
+        if (userChoice === "solen") {
+            sunCount++;
+            localStorage.setItem('sunCount', sunCount);
+        } else if (userChoice === "månen") {
+            moonCount++;
+            localStorage.setItem('moonCount', moonCount);
+        }
+
+        // Uppdatera räknartexten
+        counterBox.innerHTML = `<span>Solen: ${sunCount}</span> <span>Månen: ${moonCount}</span>`;
+    }
 });
 
 
