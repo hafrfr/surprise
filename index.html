@@ -11,10 +11,10 @@
     <audio id="tompaAudio" src="tompa.mp3" preload="auto"></audio>
 
     <div id="container">
-        <div id="sun-container">
+        <div id="sun-container" class="image-container">
             <img id="sun" src="sun.jpeg" alt="Solen" />
         </div>
-        <div id="moon-container">
+        <div id="moon-container" class="image-container">
             <img id="moon" src="moon.jpeg" alt="Månen" />
         </div>
     </div>
@@ -30,6 +30,16 @@
         <button id="confirm-button">Bekräfta ditt val</button>
     </div>
 
+    <!-- Hemlig ruta för att visa antal bekräftade val -->
+    <div id="hidden-confirmations" style="display:none;">
+        <p>Solen: <span id="sun-count">0</span></p>
+        <p>Månen: <span id="moon-count">0</span></p>
+    </div>
+
+    <!-- Knapp för att visa/dölja den hemliga rutan -->
+    <button id="toggle-confirmations">Visa Bekräftelser</button>
+
     <script src="script.js"></script>
 </body>
 </html>
+
