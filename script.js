@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function() {
 let userChoice = "";
 let currentAudio = null; // Håller reda på det aktuella ljudet som spelas
 
@@ -112,6 +113,5 @@ document.getElementById('confirm-button').addEventListener('click', function() {
         alert("Du måste välja solen eller månen innan du kan bekräfta ditt val!");
     }
 });
-
 
 
