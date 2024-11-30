@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let userChoice = "";
     let currentAudio = null; // Håller reda på det aktuella ljudet som spelas
 
+    // Klickhändelse för Solen
     document.getElementById('sun').addEventListener('click', function() {
         // Spela upp ljud för solen
         playSound('talking_sun.mp3');
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('confirmation-box').classList.remove('hidden');
     });
 
+    // Klickhändelse för Månen
     document.getElementById('moon').addEventListener('click', function() {
         // Spela upp ljud för månen
         playSound('talking_moon.mp3');
@@ -65,20 +67,15 @@ document.addEventListener('DOMContentLoaded', function() {
         currentAudio.play(); // Spela upp ljudet
     }
 
-    // Ta bort koden för "nytt val"-knappen
-    // Denna kod har tagits bort eftersom du inte längre vill ha en sådan knapp.
-    // Därmed behövs inte eventlistenern för 'new-choice' längre.
-
-    // Funktion för att uppdatera feedback baserat på användarens val (valfritt)
+    // Funktion för att uppdatera feedback (valfritt, men kan användas för extra funktionalitet)
     function updateFeedback() {
-        // Här kan du lägga till kod för att uppdatera feedback till användaren
-        // beroende på deras val, om du till exempel vill visa något annat.
+        // Här kan du lägga till kod för att uppdatera feedback till användaren beroende på deras val
     }
 
     // Bekräfta-val-knapp
     document.getElementById('confirm-button').addEventListener('click', function() {
         if (userChoice) {
-            // Spela upp tompa.mp3
+            // Spela upp bekräftelseljud
             playSound('tompa.mp3');
             
             // Visa bekräftande text
@@ -90,3 +87,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
